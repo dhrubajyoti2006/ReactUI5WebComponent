@@ -59,7 +59,14 @@ jobs:
           mkdir -p _site/ui5
           cp ui/react/apps/web/dist/web.js _site/web.js
           cp ui/react/apps/web/dist/web.css _site/web.css
-          cp -r ui/ui5/dist/* _site/ui5/
+
+          if [ -d ui/ui5/dist ]; then
+            cp -r ui/ui5/dist/* _site/ui5/ || true
+          fi
+
+          if [ ! -f _site/ui5/index.html ] && [ -f _site/ui5/resources/com/myorg/myapp/index.html ]; then
+            cp _site/ui5/resources/com/myorg/myapp/index.html _site/ui5/index.html
+          fi
 
           cat > _site/index.html <<'HTML'
           <!doctype html>
