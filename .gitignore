@@ -1,0 +1,73 @@
+# React monorepo dependencies
+/ui/react/node_modules/
+/ui/react/apps/web/node_modules/
+/ui/react/apps/svelte/node_modules/
+
+# Build outputs
+/ui/react/apps/web/dist/
+/ui/react/apps/svelte/dist/
+/ui/react/apps/web/build/
+/ui/react/apps/svelte/build/
+/ui/react/apps/web/coverage/
+/ui/react/apps/svelte/coverage/
+
+# Tooling caches
+/ui/react/.vite/
+/ui/react/apps/web/.vite/
+/ui/react/apps/svelte/.vite/
+/ui/react/apps/web/*.tsbuildinfo
+/ui/react/apps/svelte/*.tsbuildinfo
+
+# Logs
+/ui/react/*.log
+/ui/react/npm-debug.log*
+/ui/react/yarn-debug.log*
+/ui/react/yarn-error.log*
+/ui/react/pnpm-debug.log*
+/ui/react/apps/web/*.log
+/ui/react/apps/svelte/*.log
+
+# Environment files
+/ui/react/.env
+/ui/react/.env.*
+!/ui/react/.env.example
+/ui/react/apps/web/.env
+/ui/react/apps/web/.env.*
+!/ui/react/apps/web/.env.example
+/ui/react/apps/svelte/.env
+/ui/react/apps/svelte/.env.*
+!/ui/react/apps/svelte/.env.example
+
+# OS / editor files
+/.DS_Store
+/ui/react/.DS_Store
+/.idea/
+/ui/react/.idea/
+/ui/react/.vscode/
+
+# UI5 project dependencies
+/ui/ui5/node_modules/
+
+# UI5 build outputs
+/ui/ui5/dist/
+/ui/ui5/coverage/
+/ui/ui5/.nyc_output/
+/ui/ui5/.ui5/
+/ui/ui5/ui5-local.yaml
+
+# UI5 logs
+/ui/ui5/*.log
+/ui/ui5/npm-debug.log*
+/ui/ui5/yarn-debug.log*
+/ui/ui5/yarn-error.log*
+/ui/ui5/pnpm-debug.log*
+
+# UI5 environment files
+/ui/ui5/.env
+/ui/ui5/.env.*
+!/ui/ui5/.env.example
+
+# UI5 editor/system files
+/ui/ui5/.DS_Store
+/ui/ui5/.idea/
+/ui/ui5/.vscode/

@@ -1,0 +1,43 @@
+{
+  "title": "UI5 Bound Calendar",
+  "width": "780px",
+  "height": "420px",
+  "data": [
+    {
+      "title": "UI5 Sync",
+      "start": "2026-02-16T10:00:00",
+      "end": "2026-02-16T11:00:00",
+      "allDay": false
+    },
+    {
+      "title": "Component Showcase",
+      "start": "2026-02-17T14:00:00",
+      "end": "2026-02-17T15:30:00",
+      "allDay": false
+    },
+    {
+      "title": "Cross-Team Review",
+      "start": "2026-02-18T13:00:00",
+      "end": "2026-02-18T14:00:00",
+      "allDay": false
+    },
+    {
+      "title": "UI5 Integration Test",
+      "start": "2026-02-19T09:30:00",
+      "end": "2026-02-19T11:00:00",
+      "allDay": false
+    },
+    {
+      "title": "Product Demo",
+      "start": "2026-02-20T16:00:00",
+      "end": "2026-02-20T17:00:00",
+      "allDay": false
+    },
+    {
+      "title": "Maintenance Day",
+      "start": "2026-02-23T00:00:00",
+      "end": "2026-02-23T23:59:00",
+      "allDay": true
+    }
+  ]
+}

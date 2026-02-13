@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Sprint Planning",
+    "start": "2026-02-16T09:00:00",
+    "end": "2026-02-16T10:30:00",
+    "allDay": false
+  },
+  {
+    "title": "Design Review",
+    "start": "2026-02-17T11:00:00",
+    "end": "2026-02-17T12:00:00",
+    "allDay": false
+  },
+  {
+    "title": "UI5 Integration Workshop",
+    "start": "2026-02-18T14:00:00",
+    "end": "2026-02-18T16:00:00",
+    "allDay": false
+  },
+  {
+    "title": "Release Readiness Check",
+    "start": "2026-02-19T10:00:00",
+    "end": "2026-02-19T11:00:00",
+    "allDay": false
+  },
+  {
+    "title": "Customer Demo",
+    "start": "2026-02-20T15:00:00",
+    "end": "2026-02-20T16:00:00",
+    "allDay": false
+  },
+  {
+    "title": "Team Offsite",
+    "start": "2026-02-23T00:00:00",
+    "end": "2026-02-23T23:59:00",
+    "allDay": true
+  },
+  {
+    "title": "Tech Debt Cleanup",
+    "start": "2026-02-24T13:00:00",
+    "end": "2026-02-24T15:00:00",
+    "allDay": false
+  },
+  {
+    "title": "Architecture Forum",
+    "start": "2026-02-25T16:00:00",
+    "end": "2026-02-25T17:30:00",
+    "allDay": false
+  },
+  {
+    "title": "Quarterly Roadmap Alignment",
+    "start": "2026-02-26T09:30:00",
+    "end": "2026-02-26T11:30:00",
+    "allDay": false
+  },
+  {
+    "title": "Production Deployment Window",
+    "start": "2026-02-27T19:00:00",
+    "end": "2026-02-27T21:00:00",
+    "allDay": false
+  }
+]
