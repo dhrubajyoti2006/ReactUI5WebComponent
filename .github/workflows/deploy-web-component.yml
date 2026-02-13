@@ -40,6 +40,72 @@ jobs:
         working-directory: ui/react
         run: npm run build:web -w apps/web
 
+      - name: Create demo index.html
+        working-directory: ui/react/apps/web/dist
+        run: |
+          cat > index.html <<'HTML'
+          <!doctype html>
+          <html lang="en">
+            <head>
+              <meta charset="UTF-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <title>React Calendar Web Component Demo</title>
+              <link rel="stylesheet" href="./web.css" />
+              <style>
+                body {
+                  margin: 0;
+                  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                  background: #f3f8ff;
+                  color: #10243e;
+                }
+                main {
+                  max-width: 1100px;
+                  margin: 24px auto;
+                  padding: 0 16px;
+                }
+                h1 {
+                  margin: 0 0 10px;
+                }
+              </style>
+            </head>
+            <body>
+              <main>
+                <h1>React Calendar Web Component</h1>
+                <p>This page is served from GitHub Pages and loads <code>web.js</code>.</p>
+                <react-calendar id="calendar"></react-calendar>
+              </main>
+
+              <script type="module" src="./web.js"></script>
+              <script type="module">
+                const calendar = document.getElementById("calendar");
+                calendar.title = "GitHub Pages Demo Calendar";
+                calendar.width = "100%";
+                calendar.height = 620;
+                calendar.data = [
+                  {
+                    title: "Pages Deployment Check",
+                    start: "2026-02-16T10:00:00",
+                    end: "2026-02-16T11:00:00",
+                    allDay: false
+                  },
+                  {
+                    title: "Cross Framework Demo",
+                    start: "2026-02-17T14:00:00",
+                    end: "2026-02-17T15:30:00",
+                    allDay: false
+                  },
+                  {
+                    title: "Calendar Showcase",
+                    start: "2026-02-20T12:00:00",
+                    end: "2026-02-20T13:00:00",
+                    allDay: false
+                  }
+                ];
+              </script>
+            </body>
+          </html>
+          HTML
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
