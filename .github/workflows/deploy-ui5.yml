@@ -1,7 +1,13 @@
-name: Deploy Web Component to Pages
+name: Deploy UI5 App to Pages
 
 on:
   workflow_dispatch:
+  push:
+    branches: [master]
+    paths:
+      - 'ui/ui5/**'
+      - 'ui/react/**'
+      - '.github/workflows/deploy-ui5.yml'
 
 permissions:
   contents: read
@@ -28,20 +34,34 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: ui/react/package-lock.json
+          cache-dependency-path: |
+            ui/react/package-lock.json
+            ui/ui5/package-lock.json
 
-      - name: Install deps
+      - name: Install React workspace deps
         working-directory: ui/react
         run: npm ci
 
-      - name: Build only web component
+      - name: Build web component bundle
         working-directory: ui/react
         run: npm run build:web -w apps/web
 
-      - name: Create demo index.html
-        working-directory: ui/react/apps/web/dist
+      - name: Install UI5 deps
+        working-directory: ui/ui5
+        run: npm ci
+
+      - name: Build UI5 app
+        working-directory: ui/ui5
+        run: npm run build
+
+      - name: Prepare Pages artifact
         run: |
-          cat > index.html <<'HTML'
+          mkdir -p _site/ui5
+          cp ui/react/apps/web/dist/web.js _site/web.js
+          cp ui/react/apps/web/dist/web.css _site/web.css
+          cp -r ui/ui5/dist/* _site/ui5/
+
+          cat > _site/index.html <<'HTML'
           <!doctype html>
           <html lang="en">
             <head>
@@ -69,7 +89,7 @@ jobs:
             <body>
               <main>
                 <h1>React Calendar Web Component</h1>
-                <p>This page is served from GitHub Pages and loads <code>web.js</code>.</p>
+                <p>UI5 app is available at <a href="./ui5/">/ui5/</a>.</p>
                 <react-calendar id="calendar"></react-calendar>
               </main>
 
@@ -110,7 +130,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ui/react/apps/web/dist
+          path: _site
 
       - name: Deploy
         id: deployment

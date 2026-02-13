@@ -68,8 +68,8 @@ export default class ReactCalendar extends Control {
 		ReactCalendar.loadPromise = new Promise((resolve, reject) => {
 			const cssId = "react-calendar-webcss";
 			const scriptId = "react-calendar-webjs";
-			const cssHref = sap.ui.require.toUrl("com/myorg/myapp/thirdparty/web.css");
-			const scriptSrc = sap.ui.require.toUrl("com/myorg/myapp/thirdparty/web.js");
+			const cssHref = "https://dhrubajyoti2006.github.io/ReactUI5WebComponent/web.css";
+			const scriptSrc = "https://dhrubajyoti2006.github.io/ReactUI5WebComponent/web.js";
 
 			if (!document.getElementById(cssId)) {
 				const link = document.createElement("link");
@@ -118,3 +118,4 @@ export default class ReactCalendar extends Control {
 			});
 	}
 }
+
